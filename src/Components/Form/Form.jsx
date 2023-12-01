@@ -38,6 +38,10 @@ const Form = () => {
       setError(false);
       setShow(false);
       setTimer(0);
+      setUsuario({
+        nombre: "",
+        email: "",
+      });
     }
   }, [timer])
 
@@ -59,10 +63,6 @@ const Form = () => {
     if (usuario.nombre.length >= 5 && validateEmail()) {
       setShow(true);
       setError(false);
-      setUsuario({
-        nombre: "",
-        email: "",
-      });
     } else {
       setError(true);
       setShow(false);
@@ -94,7 +94,7 @@ const Form = () => {
         <button className="submit">Enviar</button>
       </form>
       <div className="snackBar" id={show ? "successMessage" : error && "errorMessage"}>
-        {show && <h4 style={{color: "rgb(73, 176, 255)"}}>Gracias {usuario.nombre}, te contactaremos cuanto antes vía mail</h4> }
+        {show && <h4 style={{color: "rgb(73, 176, 255)"}}>Gracias {usuario.nombre}, te enviaremos un mail cuanto antes!</h4> }
         {error && <h4 style={{color: "rgb(255, 84, 84)"}}>Por favor verifique su información nuevamente</h4>}
         {(show || error) && <progress max={5} value={timer} />}
       </div>
