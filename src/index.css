@@ -111,6 +111,7 @@ a span{
 footer {
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   padding: 2rem;
@@ -123,13 +124,28 @@ footer {
   color: #000;
 }
 
-footer > img{
-  width: 200px;
+footer img{
+  width: 250px;
+  height: auto;
   margin: 0;
 }
-footer > p{
+
+footer p{
+  font-size: 10px;
+  color: rgb(215, 215, 215);
   margin: 0;
-  padding-top: 0.7rem;
+}
+
+.footer-content p{
+  margin: 0;
+  padding-top: 1rem;
+  font-size: 15px;
+}
+
+.footer-content{
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .card-grid{
