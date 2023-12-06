@@ -6,7 +6,8 @@ import Home from "./Routes/Home";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs";
 import { useContextGlobal } from "./Components/utils/global.context";
-import './index.css'
+import './index.css';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const { state } = useContextGlobal()
@@ -30,6 +31,7 @@ function App() {
         <Route path='*' element={<h1>Page not found - Error 404</h1>} />
       </Routes>
       <Footer />
+      <Analytics />
     </div>
 
   );
